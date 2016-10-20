@@ -14,7 +14,7 @@ calculatorbuttons = [
 row = 1
 col = 0
 for i in calculatorbuttons:
-    button_style = 'flat'
+    button_style = 'raised'
     action = lambda x = i: press(x)
     tk.Button(calc, text = i, width = 1, height = 1, relief = button_style, command = action) \
         .grid(row = row, column = col, sticky = 'nesw', )
