@@ -3,14 +3,14 @@ import tkinter as tk
 calc = tk.Tk()
 calc.title("Tkinter Calculator")
 
-#The numbers and 
+#The numbers and symbols for the calculator
 calculatorbuttons = [ 
 '7', '8', '9', '/',
 '4', '5', '6', '*',
 '1', '2', '3', '-',
 '0', '+', '=', 'AC' ]
 
-# set up GUI
+# setting up the row and the colums for the calculator
 row = 1
 col = 0
 for i in calculatorbuttons:
@@ -23,10 +23,10 @@ for i in calculatorbuttons:
         col = 0
         row += 1
 
-display = tk.Entry(calc, width = 40, bg = "red")
-display.grid(row = 0, column = 0, columnspan = 5)
+display = tk.Entry(calc, width = 40, bg = "red")#The number entry form
+display.grid(row = 0, column = 0, columnspan = 5) # The grid manager for the calculator
 
-
+#defineing the button function
 def press(key):
 
     #calculation of results
@@ -37,7 +37,7 @@ def press(key):
         except:
             display.insert(tk.END, "Error")
         
-    #clear display        
+    #AC is for Clearing the data that is on the data      
     elif key == 'AC':
         display.delete(0, tk.END)
         display.insert(tk.END, "")        
@@ -46,5 +46,4 @@ def press(key):
             display.delete(0, tk.END)
         display.insert(tk.END, key)
 
-# RUNTIME
 calc.mainloop()
